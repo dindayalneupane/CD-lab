@@ -4,6 +4,7 @@ The objective of this laboratory experiment is to design and implement a program
    
 2. Methodology and Implementation:
 The project relies on an integrated architecture combining Flex for token extraction and Bison for syntactic analysis.
+
 2.1 Lexical Analysis (key.l)The Flex specification defines regular expressions to classify characters from the input stream. The operational configuration includes:  Numerical Matching: Consecutive integers matching the numerical pattern are converted to integer types via utility functions and assigned to the parser value token (NUMBER).  Whitespace Handling: Blank spaces and horizontal tabs are ignored to allow flexible formatting.  Operator Processing: Basic arithmetic operators and parentheses are passed back to the parser as individual literal character types.  Stream Handling: A standard termination wrapping function signifies the completion of the input stream reading to the system.
 
 2.2 Syntactic Analysis and Grammar (v.y)
@@ -19,8 +20,8 @@ Execution: The built executable is run locally to launch the interactive workspa
 4. Results 
 <img width="1602" height="1045" alt="Screenshot 2026-07-12 125632" src="https://github.com/user-attachments/assets/070452fd-89fe-4fdb-9e95-7d97f2a48b13" />
 
-6. Discussion:
+5. Discussion:
 The execution shows that structuring grammar hierarchically into expressions, terms, and factors naturally resolves operator precedence and associativity without requiring explicit shift-reduce declaration adjustments. By placing multiplication and division operations lower in the structural derivation tree chain than addition and subtraction, higher-priority operations automatically bind more tightly to their components.  Furthermore, integrating standard safety controls inside parsing components (such as checking if the secondary element yields zero during division evaluations) successfully prevents unexpected application faults and runtime segmentation errors.
 
-7. Conclusion:
+6. Conclusion:
 This laboratory experiment successfully demonstrated how to implement a fully working arithmetic expression evaluator using Flex and Bison. The developed program correctly manages complex multi-level mathematical calculations, prioritizes operator hierarchy constraints via structural rules, and handles syntax errors cleanly. Ultimately, this project provided key practical experience in connecting front-end tokenizer structures with structural compiler parsing systems.
